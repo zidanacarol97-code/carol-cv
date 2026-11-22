@@ -240,163 +240,145 @@
         }
 
         /* Responsive Design */
-        @media screen and (max-width: 700px) {
+      
+/* RESPONSIVE DESIGN FOR PHONES AND TABLETS */
+@media screen and (max-width: 700px) {
 
-            .layout {
-                display: block;
-                width: 100%;
-            }
+    .layout {
+        display: flex;
+        width: 100%;
+    }
 
-            .sidebar {
-                position: relative;
-                top: auto;
-                left: auto;
-                width: 100%;
-                min-height: auto;
-                height: auto;
-                padding: 15px 8px;
+    /* Keep sidebar on the LEFT */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 100vh;
+        min-height: 100vh;
+        padding: 15px 8px;
+        overflow-y: auto;
 
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
-                gap: 8px;
+        display: block;
+        border-right: 2px solid #d5dce5;
+        border-bottom: none;
+    }
 
-                border-right: none;
-                border-bottom: 2px solid #d5dce5;
-            }
+    .sidebar a {
+        display: block;
+        width: 100%;
+        padding: 12px 5px;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
 
-            .sidebar a {
-                display: inline-block;
-                width: auto;
-                margin-bottom: 0;
-                padding: 10px 12px;
-                font-size: 13px;
-            }
+    .sidebar a:hover {
+        transform: none;
+    }
 
-            .sidebar a:hover {
-                transform: none;
-            }
+    .mode-toggle {
+        display: block;
+        width: 100%;
+        padding: 12px 5px;
+        margin-top: 10px;
+        font-size: 12px;
+    }
 
-            .mode-toggle {
-                display: inline-block;
-                width: auto;
-                margin-top: 0;
-                padding: 10px 12px;
-                font-size: 13px;
-            }
+    /* Content stays on the RIGHT */
+    .main-content {
+        margin-left: 150px;
+        width: calc(100% - 150px);
+        min-height: 100vh;
+        padding: 12px;
+    }
 
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-                min-height: 100vh;
-                padding: 12px;
-            }
+    .container {
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        padding: 20px 12px;
+    }
 
-            .container {
-                width: 100%;
-                max-width: 100%;
-                min-height: auto;
-                padding: 25px 18px;
-            }
+    h1 {
+        font-size: 24px;
+    }
 
-            p, li {
-                overflow-wrap: break-word;
-            }
+    h2 {
+        font-size: 18px;
+    }
 
-            .contact p {
-                overflow-wrap: anywhere;
-            }
+    p, li {
+        font-size: 13px;
+        line-height: 1.7;
+        overflow-wrap: break-word;
+    }
 
-            body.dark-mode .sidebar {
-                border-bottom-color: #344155;
-            }
-        }
+    .contact {
+        padding: 12px 5px;
+    }
 
-        /* RESPONSIVE DESIGN FOR SMALL PHONES */
-        @media screen and (max-width: 480px) {
+    .contact p {
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
 
-            .sidebar {
-                padding: 12px 5px;
-                gap: 5px;
-            }
+    .profile-picture img {
+        width: 140px;
+        height: 140px;
+    }
 
-            .sidebar a {
-                padding: 9px 8px;
-                font-size: 12px;
-            }
+    body.dark-mode .sidebar {
+        border-right-color: #344155;
+    }
+}
 
-            .mode-toggle {
-                padding: 9px 8px;
-                font-size: 12px;
-            }
+/* EXTRA SMALL PHONES */
+@media screen and (max-width: 360px) {
 
-            .main-content {
-                padding: 8px;
-            }
+    .sidebar {
+        width: 115px;
+        padding: 12px 5px;
+    }
 
-            .container {
-                padding: 18px 12px;
-            }
+    .sidebar a {
+        font-size: 10px;
+        padding: 10px 3px;
+    }
 
-            h1 {
-                font-size: 23px;
-            }
+    .mode-toggle {
+        font-size: 10px;
+        padding: 10px 3px;
+    }
 
-            h2 {
-                font-size: 18px;
-            }
+    .main-content {
+        margin-left: 115px;
+        width: calc(100% - 115px);
+        padding: 7px;
+    }
 
-            p, li {
-                font-size: 14px;
-            }
+    .container {
+        padding: 15px 8px;
+    }
 
-            .profile-picture img {
-                width: 145px;
-                height: 145px;
-            }
+    h1 {
+        font-size: 19px;
+    }
 
-            .contact p {
-                font-size: 12px;
-                overflow-wrap: anywhere;
-            }
-        }
+    h2 {
+        font-size: 16px;
+    }
 
-        /* EXTRA SMALL PHONES */
-        @media screen and (max-width: 360px) {
+    p, li {
+        font-size: 12px;
+    }
 
-            .sidebar {
-                gap: 4px;
-            }
+    .profile-picture img {
+        width: 110px;
+        height: 110px;
+    }
+}
 
-            .sidebar a {
-                padding: 8px;
-                font-size: 11px;
-            }
-
-            .mode-toggle {
-                font-size: 11px;
-                padding: 8px;
-            }
-
-            .container {
-                padding: 18px 10px;
-            }
-
-            h1 {
-                font-size: 21px;
-            }
-
-            h2 {
-                font-size: 17px;
-            }
-
-            .profile-picture img {
-                width: 125px;
-                height: 125px;
-            }
-     
-        }
 
     </style>
 </head>
