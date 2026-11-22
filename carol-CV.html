@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caroline Zidana - CV</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e8edf3;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        /* Main Layout */
+        .layout {
+            display: flex;
+            min-height: 100vh;
+            background: #e8edf3;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 270px;
+            min-height: 100vh;
+            background: #e8edf3;
+            padding: 30px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-right: 2px solid #d5dce5;
+        }
+
+        /* Navigation Links */
+        .sidebar a {
+            display: block;
+            background: #d4deea;
+            color: #1e3a5f;
+            text-decoration: none;
+            padding: 18px 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid #c2cfdd;
+            box-shadow: 0 3px 7px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #1e3a5f;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* Mode Toggle - No Background Button */
+        .mode-toggle {
+            display: block;
+            width: 100%;
+            padding: 15px 10px;
+            margin-top: 20px;
+            background: transparent;
+            color: #1e3a5f;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .mode-toggle:hover {
+            color: #416b9c;
+            transform: scale(1.05);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 270px;
+            width: calc(100% - 270px);
+            min-height: 100vh;
+            padding: 35px;
+            background: #e8edf3;
+        }
+
+        /* CV Container */
+        .container {
+            width: 100%;
+            max-width: 950px;
+            min-height: calc(100vh - 70px);
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        /* Main Heading */
+        h1 {
+            text-align: center;
+            color: #1e3a5f;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Information */
+        .contact {
+            text-align: center;
+            background: #f1f5f9;
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .contact p {
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+        /* Clickable Phone and Email */
+        .contact a {
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+            color: #416b9c;
+        }
+
+        /* Profile Picture */
+        .profile-picture {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .profile-picture img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            display: inline-block;
+        }
+
+        /* Section Headings */
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1e3a5f;
+            border-bottom: 2px solid #dbe4ee;
+            padding-bottom: 10px;
+            font-size: 22px;
+        }
+
+        p, li {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        section {
+            margin-bottom: 25px;
+            scroll-margin-top: 25px;
+        }
+
+        /* Dark Mode */
+        body.dark-mode,
+        body.dark-mode .layout,
+        body.dark-mode .main-content {
+            background: #121a26;
+            color: #e5e7eb;
+        }
+
+        body.dark-mode .sidebar {
+            background: #121a26;
+            border-right: 2px solid #344155;
+        }
+
+        body.dark-mode .sidebar a {
+            background: #253449;
+            color: white;
+            border-color: #344155;
+        }
+
+        body.dark-mode .sidebar a:hover {
+            background: #416b9c;
+        }
+
+        body.dark-mode .container {
+            background: #1e293b;
+            color: #e5e7eb;
+        }
+
+        body.dark-mode h1,
+        body.dark-mode h2 {
+            color: #93c5fd;
+        }
+
+        body.dark-mode h2 {
+            border-bottom-color: #475569;
+        }
+
+        body.dark-mode .contact {
+            background: #29384d;
+            color: white;
+        }
+
+        body.dark-mode .contact a {
+            color: #93c5fd;
+        }
+
+        body.dark-mode .mode-toggle {
+            background: transparent;
+            color: #facc15;
+        }
+
+        body.dark-mode .mode-toggle:hover {
+            color: #fde68a;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 700px) {
+
+            .sidebar {
+                width: 180px;
+                padding: 20px 10px;
+            }
+
+            .sidebar a {
+                padding: 15px 8px;
+                font-size: 13px;
+            }
+
+            .mode-toggle {
+                padding: 14px 5px;
+                font-size: 13px;
+            }
+
+            .main-content {
+                margin-left: 180px;
+                width: calc(100% - 180px);
+                padding: 12px;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            h2 {
+                font-size: 19px;
+            }
+
+            p, li {
+                font-size: 14px;
+            }
+
+            .profile-picture img {
+                width: 170px;
+                height: 170px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+
+            <a href="#home">🏠 Home</a>
+
+            <a href="#profile">👤 Personal Profile</a>
+
+            <a href="#education">🎓 Education</a>
+
+            <a href="#skills">💡 Skills</a>
+
+            <a href="#projects">📚 Projects</a>
+
+            <a href="#hobbies">🎨 Hobbies</a>
+
+            <button class="mode-toggle"
+                    onclick="changeMode()"
+                    id="modeButton">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <div class="container">
+
+                <!-- Home Section -->
+                <section id="home">
+
+                    <h1>Caroline Zidana</h1>
+
+                    <div class="contact">
+
+                        <p>
+                            ☎ Phone:
+                            <a href="tel:0988518746">
+                                0988518746
+                            </a>
+                        </p>
+
+                        <p>
+                            ✉ Email:
+                            <a href="mailto:zidanacarol97@gmail.com">
+                                zidanacarol97@gmail.com
+                            </a>
+                        </p>
+
+                        <p>
+                            📍 Location: Blantyre, Malawi
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- Profile Picture Below Home -->
+                <div class="profile-picture">
+
+                    <img src="./caro.jpeg"
+                         alt="Caroline Zidana">
+
+                </div>
+
+                <!-- Personal Profile -->
+                <section id="profile">
+
+                    <h2>👤 Personal Profile</h2>
+
+                    <p>
+                       I am a motivated and ambitious Management Information Systems student at the Malawi University of Business and Applied Sciences (MUBAS),
+                        with a strong interest in technology, business and cybersecurity. I possess good communication, problem-solving and computer application skills,
+                         as well as a growing understanding of information systems and computer networking. I am hardworking, creative, adaptable and eager to learn new skills. 
+                         I enjoy exploring emerging technologies and applying my knowledge to solve problems. I aspire to gain practical experience, develop my technical abilities and
+                          build a successful career in the Information Technology industry.
+                    </p>
+
+                </section>
+
+                <!-- Education -->
+                <section id="education">
+
+                    <h2>🎓 Education</h2>
+
+                    <p>
+                        <strong>
+                            Malawi University of Business and
+                            Applied Sciences (MUBAS)
+                        </strong>
+                        <br>
+
+                        Program: Management Information Systems
+                        <br>
+
+                        Years: 2025-2029
+                    </p>
+
+                </section>
+
+                <!-- Skills -->
+                <section id="skills">
+
+                    <h2>💡 Skills</h2>
+
+                    <ul>
+                        <li>Good communication</li>
+                        <li>Business skills</li>
+                        <li>Computer skills</li>
+                        <li>Cyber security basics</li>
+                        <li>willingness to learn and develop new skills</li>
+                        <li>Ability to work independently and as part of a team</li>
+                        <li>Adaptability and flexibility</li>
+                        <li>Good time management and organisational skills</li>
+                    </ul>
+
+                </section>
+
+                <!-- Activities and Projects -->
+                <section id="projects">
+
+                    <h2>📚 Activities & Projects</h2>
+
+                    <ul>
+                        <li>Cyber security projects</li>
+                        <li>Web development</li>
+                        <li>Database management projects</li>
+                    </ul>
+
+                </section>
+
+                <!-- Hobbies -->
+                <section id="hobbies">
+
+                    <h2>🎨 Hobbies & Interests</h2>
+
+                    <ul>
+                        <li>Coding</li>
+                        <li>Drawing</li>
+                        <li>Fashion & beauty</li>
+                        <li>Technology</li>
+                    </ul>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Light and Dark Mode -->
+    <script>
+
+        function changeMode() {
+
+            document.body.classList.toggle("dark-mode");
+
+            const button = document.getElementById("modeButton");
+
+            if (document.body.classList.contains("dark-mode")) {
+
+                button.innerHTML = "☀️ Light Mode";
+
+                localStorage.setItem("theme", "dark");
+
+            } else {
+
+                button.innerHTML = "🌙 Dark Mode";
+
+                localStorage.setItem("theme", "light");
+
+            }
+
+        }
+
+        // Remember the selected mode after refreshing
+        window.addEventListener("DOMContentLoaded", function() {
+
+            const savedTheme = localStorage.getItem("theme");
+
+            const button = document.getElementById("modeButton");
+
+            if (savedTheme === "dark") {
+
+                document.body.classList.add("dark-mode");
+
+                button.innerHTML = "☀️ Light Mode";
+
+            } else {
+
+                document.body.classList.remove("dark-mode");
+
+                button.innerHTML = "🌙 Dark Mode";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
