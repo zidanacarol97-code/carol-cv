@@ -619,11 +619,18 @@ body.dark-mode .menu-toggle {
             }
 
         });
-        function toggleSidebarMenu() {
-    const items = document.getElementById("sidebarItems");
-    items.classList.toggle("open");
-}
+     function toggleSidebarMenu() {
+            const items = document.getElementById("sidebarItems");
+            const menuBtn = document.getElementById("menuButton");
 
+            items.classList.toggle("open");
+
+            if (items.classList.contains("open")) {
+                menuBtn.innerHTML = "✕";
+            } else {
+                menuBtn.innerHTML = "☰";
+            }
+        }
 
     </script>
 
